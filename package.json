@@ -1,0 +1,38 @@
+{
+  "name": "Playwright_viewer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A local dashboard for discovering, running and reviewing Playwright tests.",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -n API,WEB -c cyan,magenta \"npm:dev:server\" \"npm:dev:web\"",
+    "dev:server": "tsx watch server/src/index.ts",
+    "dev:web": "vite --config web/vite.config.ts --host 127.0.0.1",
+    "build": "tsc -p tsconfig.json && tsc -p web/tsconfig.json && vite build --config web/vite.config.ts",
+    "start": "tsx server/src/index.ts",
+    "test": "playwright test",
+    "test:list": "playwright test --list"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.56.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "lucide-react": "^0.468.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^5.0.4",
+    "concurrently": "^9.2.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.12"
+  }
+}

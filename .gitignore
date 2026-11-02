@@ -1,0 +1,8 @@
+node_modules/
+web/dist/
+.env
+.Playwright_viewer/
+playwright-report/
+test-results/
+coverage/
+*.log
